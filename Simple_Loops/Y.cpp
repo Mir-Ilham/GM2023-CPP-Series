@@ -10,17 +10,17 @@ int main() {
     optimize();
     int n, k, m, x, sum = 0;
     cin >> n >> k >> m;
-    for (int i = 0; i < n - 1; i++) {
+    for (int i = 1; i < n; i++) {
         int y;
         cin >> y;
         sum += y;
     }
-    x = (n * m) - sum;
-    if (0 < x && x <= k)
-        cout << x << endl;
-    else if (x < 0)
+    x = m * n - sum;
+    if (x < 0)
         cout << 0 << endl;
-    else
+    else if (x > k)
         cout << -1 << endl;
+    else
+        cout << x << endl;
     return 0;
 }
